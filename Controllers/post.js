@@ -3,10 +3,10 @@ const { body, validationResult } = require('express-validator');
 
 
 
-const findPost= (res,req)=>{
-// const returnPost = await Joob.find();
-//     return res.send(returnPost)
-     return res.send('Post page')
+const findPost= async (res,req)=>{
+ const returnPost = await Joob.find();
+     return res.send(returnPost)
+     //return res.send('Post page')
 }
 
 //la partie creation
@@ -15,7 +15,11 @@ const findPost= (res,req)=>{
      const errors = validationResult(req);
      if (!errors.isEmpty()) {
        return res.status(400).json({ errors: errors.array() });
-     }}
+     }
+    const JobOffers = new Joob(req.body);
+    const Joby = await JobOffers.save();
+    return res.send(Joby);
+    }
 
 //la partie edit et deliete :
 //    //PUT : EDIT A USER BY ID 
