@@ -34,11 +34,8 @@ const upDatedProfil  =  async (req, res) => {
       status,
       githubusername,
       skills,
-      youtube,
-      twitter,
-      instagram,
-      linkedin,
-      facebook,
+     
+     
     } = req.body;
 
     // //Build profile object
@@ -57,13 +54,7 @@ const upDatedProfil  =  async (req, res) => {
        
      }
 
-     profileFields.social = {};
-     if (youtube) profileFields.social.youtube = youtube;
-     if (twitter) profileFields.social.twitter = twitter;
-     if (facebook) profileFields.social.facebook = facebook;
-     if (linkedin) profileFields.social.linkedin = linkedin;
-     if (instagram) profileFields.social.instagram = instagram;
-
+    
      try {
        let profile = await Profile.findOne({ user: req.user.id });
 
@@ -101,10 +92,6 @@ const getAllProfil = async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 }
-
-
-
-
 
 module.exports = {
     sayProfil,

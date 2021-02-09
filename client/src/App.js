@@ -10,6 +10,7 @@ import Landing from './components/Layout/Landing';
 import Navbar from './components/Layout/Navbar';
 import Loogin from './components/auth/Loogin';
 import Register from './components/auth/Register';
+import JobOffer from './components/recruteur/JobOffer';
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
   <switch>
     <Route exact path="/loging" component={Loogin}/>
     <Route exact path='/Register' component={Register}/>
+    <Route exact path="/JobOffer" component={JobOffer}/>
   </switch>
   </section>
   

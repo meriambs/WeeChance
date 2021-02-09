@@ -22,10 +22,10 @@ profileSchema = new mongoose.Schema({
       type:[String],
       required:true
   },
-  bio:{
+  githubusername:{
       type:String
   },
-  githubusername:{
+  bio:{
       type:String
   },
   experiences:[
@@ -86,23 +86,6 @@ profileSchema = new mongoose.Schema({
            type:String 
        }
   }],
-  scoial:[
-      {
-          youtube:{type:String},
-          twitter:{
-              type:String 
-          },
-          facebook:{
-              type:String 
-          },
-          linkedin:{
-              type:String
-          },
-          instagram:{
-              type:String 
-          }
-      }
-  ],
       date:{
         type:Date,
         default:Date.now()  
