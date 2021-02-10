@@ -16,29 +16,14 @@ const onSubmit= async e=>{
  
     console.log('SUCESS')}
  
-//     const newUser={
-//       name,
-//       email,
-//       password
-//     }
 
-//     try{
-//          const config={
-//            headers:{"Content-Type":"application/json"}
-//          }
-//          const body =JSON.stringify(newUser);
-//          const res = await axios.post('/users',body,config);
-//          console.log(res.data)
-//     }catch(err){
-// console.error(err.response.data)
-//     }
    
   return (
    
    <section className="container">
       <h1 className="large text-primary">Sign IN</h1>
       <p className="lead"><i className="fas fa-user"></i> Sing Into your Account</p>
-      <form className="form" action="create-profile.html" onSubmit={e=>onSubmit(e)}>
+      <form className="form" action="create-profile.html" onSubmit={e=>onSubmit(e)} >
        
         <div className="form-group">
           <input type="email" placeholder="Email Address" name="email" value={email} onChange={e=>onChange(e)}/>

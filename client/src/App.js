@@ -11,6 +11,7 @@ import Navbar from './components/Layout/Navbar';
 import Loogin from './components/auth/Loogin';
 import Register from './components/auth/Register';
 import JobOffer from './components/recruteur/JobOffer';
+import Profil from './components/Profil';
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
     <Route exact path="/loging" component={Loogin}/>
     <Route exact path='/Register' component={Register}/>
     <Route exact path="/JobOffer" component={JobOffer}/>
+    <Route exact path='/Profile' component={Profil} />
   </switch>
   </section>
   

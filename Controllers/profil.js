@@ -1,6 +1,7 @@
 const  Profile = require('../Models/Profile');
 const User = require ('../Models/User');
 const { body, validationResult } = require('express-validator');
+
 const sayProfil = async (req, res) => {
   try {
     const profile = await Profile.findOne({
@@ -93,8 +94,22 @@ const getAllProfil = async (req, res) => {
   }
 }
 
+//get profil by id : 
+
+const getProfId= async (res,req)=>{
+  try{
+    const profileUser = await Profile.findOne({user:req.params.user-id}).populate('user',['name','avatar']);
+    if(!profileUser) return res.status(400).json({msg:'there is no profil with this name '});
+    res.json(profileUser);
+  }catch(err){
+    console.error(err.message);
+    res.status(500).send('Server error')
+  }
+}
+
 module.exports = {
     sayProfil,
     upDatedProfil,
-    getAllProfil
+    getAllProfil,
+    getProfId
 }
