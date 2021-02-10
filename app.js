@@ -10,10 +10,13 @@ const path = require('path');
 
 const personRouter = require ('./routes/Users')
 //ici les rest des routes : 
-const authentificationRouter = require ('./routes/Auth');
-const postRouter = require ('./routes/Post');
-const profilRouter = require ('./routes/Profil')
+ const authentificationRouter = require ('./routes/Auth');
+ const postRouter = require ('./routes/Post');
+ const profilRouter = require ('./routes/Profil')
 
+// const videoRoutes = require('./routes/Video');
+// const applicationRoutes = require('./routes/Application');
+// const mediaRoutes = require('./routes/Media');
 
 
 //**fin des routes  */
@@ -47,7 +50,11 @@ app.use('/users', personRouter);
 app.use('/auth', authentificationRouter);
 app.use('/profil', profilRouter);
 app.use('/post', postRouter);
+// app.use('/user', passport.authenticate('jwt', { session : false }), secureRoute );
+// app.use('/video', videoRoutes);
 
+// app.use('/application', applicationRoutes);
+// app.use('/media', mediaRoutes);
 
 //**find des liens de routes */
 //how to startl listen 
